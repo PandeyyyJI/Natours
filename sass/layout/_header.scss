@@ -1,0 +1,45 @@
+.header {
+    height: 95vh;  /* height of the box of this element should be 95% of the viewport height*/
+    background-image: linear-gradient(
+        to right bottom,
+         rgba($color-primary-light, 0.875),
+         rgba($color-primary-dark, 0.875)),
+        url(../img/hero-small.jpg);
+
+    background-size: cover; /* covers the element inside the whole box */
+    background-position: top;
+    position: relative;
+
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+
+    @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em), (min-width: 125em){
+        background-image: linear-gradient(
+            to right bottom,
+             rgba($color-primary-light, 0.875),
+             rgba($color-primary-dark, 0.875)),
+            url(../img/hero.jpg);
+    }
+
+    @include respond(phone) {
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        width: 100%;
+    }
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 3.5rem;   /* width will be specified by the browser*/
+    }
+    
+    &__text-box{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
